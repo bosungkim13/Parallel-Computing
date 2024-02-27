@@ -1,0 +1,1 @@
+srun --pty --partition=interactive --export=ALL --nodes=1 --ntasks-per-node=1 --cpus-per-task=16 --mem-per-cpu=512 --threads-per-core=1 --time=00:30:00 bash

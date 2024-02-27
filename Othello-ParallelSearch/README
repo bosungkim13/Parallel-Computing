@@ -1,0 +1,37 @@
+Files:
+
+  interactive: 
+    a command that you can source to get a command line prompt
+    in the interactive partition on a compute node
+
+    usage:
+
+      source interactive
+
+  submit.sbatch:
+    a script that you can use to launch a batch job that will execute 
+    a series of tests on 1..16 cores on a compute node. currently, this
+    submission file is configured to use the reserved nodes in the
+    interactive partition. you might get faster turnaround time with 
+    either the scavenge or commons partitions. 
+
+    you can modify this script to run your code multiple times with different lookahead depths
+    using cilkview to collect scalability and performance metrics.
+
+    usage:
+        sbatch submit.sbatch
+
+  othello.cpp: 
+    a program that you can use as the basis for your code if you wish.  
+    your solution may include any or all of the code in this file. 
+
+  Makefile:
+    a Makefile that includes recipes for building and running your program
+
+    usage:
+
+      make # builds your code
+      make runp # runs a parallel version of your code on W workers
+      make runs # runs a serial version of your code on one worker
+      make screen # runs your parallel code with cilkscreen
+      make view # runs your parallel code with cilkview
